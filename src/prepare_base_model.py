@@ -8,6 +8,12 @@ import random
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.layers import Dense,ReLU,LeakyReLU,Flatten
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
+from tensorflow.keras.optimizers import SGD,Adam
+from tensorflow.keras.metrics import Accuracy 
+
+
 
 STAGE = "PREPARE_BASE_MODEL" ## <<< change stage name 
 
@@ -19,10 +25,10 @@ logging.basicConfig(
     )
 
 
-def main(config_path, params_path):
+def main(config_path):
     ## read config files
     config = read_yaml(config_path)
-    params = read_yaml(params_path)
+    # params = read_yaml(params_path)
     
     mnist = tf.keras.datasets.mnist
     (X_train_full, y_train_full), (X_test, y_test) = mnist.load_data()
@@ -46,6 +52,26 @@ def main(config_path, params_path):
         Dense(10,activation='softmax')
     ]
     
+    
+    model = Sequential(LAYERS)
+    model.compile(loss='sparse_categorical_crossentropy',
+                  metrics=['accuracy'],
+                  optimizer=SGD(learning_rate=1e-3)
+                  )
+    
+    model.summary()
+    
+    #training Model
+    history = model.fit(X_train,y_train,epochs=20,validation_data=(X_valid,y_valid),verbose=2)
+    
+    model_dir_path = os.path.join('artifacts','models')
+    create_directories([model_dir_path])
+    # global model_path
+    model_path = os.path.join(model_dir_path,'base_model.h5')
+    
+    model.save(model_path)
+    logging.info(f"Base Model is saved at {model_path}")
+    
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
@@ -56,7 +82,7 @@ if __name__ == '__main__':
     try:
         logging.info("\n********************")
         logging.info(f">>>>> stage {STAGE} started <<<<<")
-        main(config_path=parsed_args.config, params_path=parsed_args.params)
+        main(config_path=parsed_args.config)
         logging.info(f">>>>> stage {STAGE} completed!<<<<<\n")
     except Exception as e:
         logging.exception(e)

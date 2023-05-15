@@ -5,7 +5,8 @@ __pycache__/
 /transfer_lerning_env/
 # C extensions
 *.so
-
+*.h5
+*.log
 # Distribution / packaging
 .Python
 build/

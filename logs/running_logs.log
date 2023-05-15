@@ -1,0 +1,81 @@
+[2023-05-15 10:21:24,325: INFO: prepare_base_model]: 
+********************
+[2023-05-15 10:21:24,326: INFO: prepare_base_model]: >>>>> stage PREPARE_BASE_MODEL started <<<<<
+[2023-05-15 10:21:24,326: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-05-15 10:21:51,835: INFO: common]: created directory at: artifacts\models
+[2023-05-15 10:21:51,866: INFO: prepare_base_model]: Base Model is saved at artifacts\models\base_model.h5
+[2023-05-15 10:21:51,888: INFO: prepare_base_model]: >>>>> stage PREPARE_BASE_MODEL completed!<<<<<
+
+[2023-05-15 10:32:24,211: INFO: transfer_learning]: 
+********************
+[2023-05-15 10:32:24,211: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL started <<<<<
+[2023-05-15 10:32:24,212: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-05-15 10:32:24,212: ERROR: transfer_learning]: name 'BASE_MODEL_PATH' is not defined
+Traceback (most recent call last):
+  File "src\transfer_learning.py", line 50, in <module>
+    main(config_path=parsed_args.config)
+  File "src\transfer_learning.py", line 36, in main
+    base_model_path = BASE_MODEL_PATH
+NameError: name 'BASE_MODEL_PATH' is not defined
+[2023-05-15 10:34:17,319: INFO: prepare_base_model]: 
+********************
+[2023-05-15 10:34:17,319: INFO: prepare_base_model]: >>>>> stage PREPARE_BASE_MODEL started <<<<<
+[2023-05-15 10:34:17,320: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-05-15 10:34:45,518: INFO: common]: created directory at: artifacts\models
+[2023-05-15 10:34:45,557: INFO: prepare_base_model]: Base Model is saved at artifacts\models\base_model.h5
+[2023-05-15 10:34:45,578: INFO: prepare_base_model]: >>>>> stage PREPARE_BASE_MODEL completed!<<<<<
+
+[2023-05-15 10:36:12,654: INFO: transfer_learning]: 
+********************
+[2023-05-15 10:36:12,654: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL started <<<<<
+[2023-05-15 10:36:12,655: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-05-15 10:36:12,655: ERROR: transfer_learning]: load_model() missing 1 required positional argument: 'filepath'
+Traceback (most recent call last):
+  File "src\transfer_learning.py", line 48, in <module>
+    main(config_path=parsed_args.config)
+  File "src\transfer_learning.py", line 35, in main
+    base_model = tf.keras.models.load_model()
+TypeError: load_model() missing 1 required positional argument: 'filepath'
+[2023-05-15 10:36:31,913: INFO: transfer_learning]: 
+********************
+[2023-05-15 10:36:31,913: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL started <<<<<
+[2023-05-15 10:36:31,914: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-05-15 10:36:32,023: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL completed!<<<<<
+
+[2023-05-15 10:45:48,967: INFO: transfer_learning]: 
+********************
+[2023-05-15 10:45:48,967: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL started <<<<<
+[2023-05-15 10:45:48,968: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-05-15 10:45:49,077: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL completed!<<<<<
+
+[2023-05-15 10:46:25,779: INFO: transfer_learning]: 
+********************
+[2023-05-15 10:46:25,779: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL started <<<<<
+[2023-05-15 10:46:25,780: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-05-15 10:46:25,889: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL completed!<<<<<
+
+[2023-05-15 10:50:52,184: INFO: transfer_learning]: 
+********************
+[2023-05-15 10:50:52,184: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL started <<<<<
+[2023-05-15 10:50:52,185: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-05-15 10:50:52,316: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL completed!<<<<<
+
+[2023-05-15 11:00:03,864: INFO: transfer_learning]: 
+********************
+[2023-05-15 11:00:03,864: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL started <<<<<
+[2023-05-15 11:00:03,865: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-05-15 11:00:25,667: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL completed!<<<<<
+
+[2023-05-15 11:01:30,330: INFO: transfer_learning]: 
+********************
+[2023-05-15 11:01:30,330: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL started <<<<<
+[2023-05-15 11:01:30,331: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-05-15 11:01:54,058: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL completed!<<<<<
+
+[2023-05-15 11:04:15,519: INFO: transfer_learning]: 
+********************
+[2023-05-15 11:04:15,519: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL started <<<<<
+[2023-05-15 11:04:15,520: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2023-05-15 11:04:39,295: INFO: transfer_learning]: Base Model is saved at artifacts\models\new_model.h5
+[2023-05-15 11:04:39,317: INFO: transfer_learning]: >>>>> stage PREPARE_BASE_MODEL completed!<<<<<
+
